@@ -1,7 +1,11 @@
+import SearchInput from "./components/SearchInput"
+
 function App() {
 
   return (
-    <div></div>
+    <div className="p-12">
+      <h1 className="text-primary text-2xl text-center">TODO LIST</h1>
+    </div>
   )
 }
 
