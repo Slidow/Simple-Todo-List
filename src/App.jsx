@@ -1,5 +1,6 @@
 import Filter from "./components/Filter"
 import SearchInput from "./components/SearchInput"
+import ThemeToggle from "./components/ThemeToggle"
 
 function App() {
 
