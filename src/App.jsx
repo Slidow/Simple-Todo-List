@@ -1,3 +1,4 @@
+import Filter from "./components/Filter"
 import SearchInput from "./components/SearchInput"
 
 function App() {
