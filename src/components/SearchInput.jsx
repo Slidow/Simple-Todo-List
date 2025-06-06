@@ -9,7 +9,7 @@ function SearchInput() {
   }
 
   return (
-    <div className="flex items-center gap-3 border focus-within:border-2 border-accent rounded-sm px-3 py-1">
+    <div className="flex flex-1 items-center gap-3 border border-accent rounded-sm px-3 py-1">
       <CiSearch 
         size={22} 
         className="text-accent"
