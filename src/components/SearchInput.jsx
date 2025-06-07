@@ -10,15 +10,15 @@ function SearchInput() {
 
   return (
     <div className="flex flex-1 items-center gap-3 border border-accent rounded-sm px-3 py-1">
-      <CiSearch 
-        size={22} 
-        className="text-accent"
-        onClick={focusInput}
-      />
       <input
         ref={inputRef}
         className="w-full outline-none placeholder-accent/35"
         placeholder="Search note..."
+      />
+      <CiSearch 
+        size={22} 
+        className="text-accent cursor-pointer"
+        onClick={focusInput}
       />
     </div>
   )

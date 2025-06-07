@@ -1,0 +1,38 @@
+import { MdOutlineCheckBoxOutlineBlank, MdCheckBox } from "react-icons/md";
+import { FaTrash } from "react-icons/fa";
+
+function Todo({ todo, setTodos }) {
+
+  const changeStatus = (id) => {
+    setTodos(prev => (
+      prev.map(todo => todo.id === id ? { ...todo, done: !todo.done } : todo)
+    ))
+  }
+
+  return (
+    <div className="flex items-center gap-2">
+      {todo.done 
+        ? <MdCheckBox 
+            className="text-accent cursor-pointer" 
+            size={27} 
+            onClick={() => changeStatus(todo.id)} 
+          /> 
+        : <MdOutlineCheckBoxOutlineBlank 
+            className="text-accent cursor-pointer" 
+            size={27} 
+            onClick={() => changeStatus(todo.id)} 
+          />
+      }
+      <span 
+        className={`flex-1 text-lg font-semibold ${todo.done && 'text-secondary line-through'}`}
+      >
+        {todo.text}
+      </span>
+      <div className="text-red-500 hover:text-red-400 p-1 rounded-full cursor-pointer">
+        <FaTrash />
+      </div>
+    </div>
+  )
+}
+
+export default Todo;
