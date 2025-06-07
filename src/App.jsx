@@ -3,7 +3,7 @@ import Filter from "./components/Filter"
 import SearchInput from "./components/SearchInput"
 import ThemeToggle from "./components/ThemeToggle"
 import Todo from "./components/Todo";
-import { AiOutlinePlus } from "react-icons/ai";
+import NewTodo from "./components/NewTodo";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -24,9 +24,7 @@ function App() {
         )) : <span className="font-semibold text-center">Add new Todos for the day!</span>}
       </div>
       
-      <div className="absolute right-12 bottom-6 bg-accent rounded-full p-2 text-white cursor-pointer">
-        <AiOutlinePlus size={24} />
-      </div>
+      <NewTodo setTodos={setTodos} />
     </div>
   )
 }
