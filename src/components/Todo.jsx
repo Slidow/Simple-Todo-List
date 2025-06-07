@@ -9,6 +9,10 @@ function Todo({ todo, setTodos }) {
     ))
   }
 
+  const deleteTodo = (id) => {
+    setTodos(prev => prev.filter(todo => todo.id !== id));
+  }
+
   return (
     <div className="flex items-center gap-2">
       {todo.done 
@@ -28,7 +32,10 @@ function Todo({ todo, setTodos }) {
       >
         {todo.text}
       </span>
-      <div className="text-red-500 hover:text-red-400 p-1 rounded-full cursor-pointer">
+      <div 
+        className="text-red-500 hover:text-red-400 p-1 rounded-full cursor-pointer"
+        onClick={() => deleteTodo(todo.id)}
+      >
         <FaTrash />
       </div>
     </div>

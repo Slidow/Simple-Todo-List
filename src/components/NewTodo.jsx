@@ -17,6 +17,7 @@ function NewTodo({ setTodos }) {
 
     setIsOverlayOpen(false);
     setNextId(nextId + 1);
+    setNote("");
   }
 
   const handleCancel = () => {
