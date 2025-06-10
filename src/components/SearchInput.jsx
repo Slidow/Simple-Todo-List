@@ -1,7 +1,7 @@
 import { CiSearch } from "react-icons/ci";
 import { useRef } from "react";
 
-function SearchInput() {
+function SearchInput({ searchQuery, setSearchQuery }) {
   const inputRef = useRef(null);
 
   const focusInput = () => {
@@ -12,6 +12,8 @@ function SearchInput() {
     <div className="flex flex-1 items-center gap-3 border border-accent rounded-sm px-3 py-1">
       <input
         ref={inputRef}
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
         className="w-full outline-none placeholder-accent/35"
         placeholder="Search note..."
       />

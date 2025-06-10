@@ -36,7 +36,7 @@ function App() {
       <h1 className="text-primary text-2xl text-center mb-5">TODO LIST</h1>
 
       <div className="flex items-center gap-5 mb-9">
-        <SearchInput />
+        <SearchInput searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
         <Filter filterStatus={filterStatus} setFilterStatus={setFilterStatus} />
         <ThemeToggle />
       </div>
