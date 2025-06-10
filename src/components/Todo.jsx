@@ -28,7 +28,7 @@ function Todo({ todo, setTodos }) {
           />
       }
       <span 
-        className={`flex-1 text-lg font-semibold ${todo.done && 'text-secondary line-through'}`}
+        className={`flex-1 text-lg dark:text-white font-semibold ${todo.done && 'text-secondary line-through'}`}
       >
         {todo.text}
       </span>

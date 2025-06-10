@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
 
-function ThemeToggle() {
-  const [theme, setTheme] = useState("light");
+function ThemeToggle({ theme, setTheme }) {
 
   const toggleTheme = () => {
     if (theme === "light") {

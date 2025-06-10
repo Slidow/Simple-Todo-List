@@ -36,13 +36,13 @@ function NewTodo({ setTodos }) {
 
       {isOverlayOpen && (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center">
-          <div className="bg-white rounded-xl px-4 py-3 w-full max-w-[400px]">
-            <h1 className="font-bold text-center mb-3">NEW NOTE</h1>
+          <div className="bg-white dark:bg-[#252525] dark:border dark:border-white rounded-xl px-4 py-3 w-full max-w-[400px]">
+            <h1 className="font-bold text-center mb-3 dark:text-white">NEW NOTE</h1>
             <form onSubmit={handleSubmit}>
               <input
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
-                className="w-full border border-accent rounded-sm px-2 py-1 mb-20"
+                className="outline-none w-full border border-accent dark:border-white dark:placeholder-white/30 rounded-sm px-2 py-1 mb-20 dark:text-white"
                 placeholder="Input your note..." 
               />
               <div className="flex items-center justify-between">

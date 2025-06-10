@@ -10,6 +10,7 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [filterStatus, setFilterStatus] = useState('ALL');
   const [visibleTodos, setVisibleTodos] = useState(todos);
+  const [theme, setTheme] = useState("light");
 
   useEffect(() => {
     let filtered = todos;
@@ -32,22 +33,24 @@ function App() {
   
 
   return (
-    <div className="p-12 relative max-w-[1000px] mx-auto min-h-screen">
-      <h1 className="text-primary text-2xl text-center mb-5">TODO LIST</h1>
+    <div className={`${theme === 'dark' ? 'dark' : ''} flex justify-center dark:bg-[#252525]`}>
+      <div className="flex-1 p-12 relative max-w-[1000px] min-h-screen">
+        <h1 className="text-primary text-2xl text-center mb-5 dark:text-white">TODO LIST</h1>
 
-      <div className="flex items-center gap-5 mb-9">
-        <SearchInput searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-        <Filter filterStatus={filterStatus} setFilterStatus={setFilterStatus} />
-        <ThemeToggle />
-      </div>
+        <div className="flex items-center gap-5 mb-9">
+          <SearchInput searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+          <Filter filterStatus={filterStatus} setFilterStatus={setFilterStatus} />
+          <ThemeToggle theme={theme} setTheme={setTheme} />
+        </div>
 
-      <div className="flex flex-col gap-5 md:px-25">
-        {visibleTodos.length !== 0 ? visibleTodos.map((todo) => (
-          <Todo todo={todo} setTodos={setTodos} />
-        )) : <span className="font-semibold text-center">Add new Todos for the day!</span>}
+        <div className="flex flex-col gap-5 md:px-25">
+          {visibleTodos.length !== 0 ? visibleTodos.map((todo) => (
+            <Todo todo={todo} setTodos={setTodos} />
+          )) : <span className="font-semibold text-center dark:text-white">Empty</span>}
+        </div>
+        
+        <NewTodo setTodos={setTodos} />
       </div>
-      
-      <NewTodo setTodos={setTodos} />
     </div>
   )
 }

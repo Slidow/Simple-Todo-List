@@ -9,17 +9,17 @@ function SearchInput({ searchQuery, setSearchQuery }) {
   }
 
   return (
-    <div className="flex flex-1 items-center gap-3 border border-accent rounded-sm px-3 py-1">
+    <div className="flex flex-1 items-center gap-3 border border-accent dark:border-white rounded-sm px-3 py-1">
       <input
         ref={inputRef}
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        className="w-full outline-none placeholder-accent/35"
+        className="w-full outline-none placeholder-accent/35 dark:placeholder-white/35 dark:text-white"
         placeholder="Search note..."
       />
       <CiSearch 
         size={22} 
-        className="text-accent cursor-pointer"
+        className="text-accent dark:text-white cursor-pointer"
         onClick={focusInput}
       />
     </div>
