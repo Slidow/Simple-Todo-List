@@ -3,13 +3,12 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 const FILTERS = ['ALL', 'ACTIVE', 'COMPLETED'];
 
-function Filter() {
+function Filter({ filterStatus, setFilterStatus }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [filter, setFilter] = useState("ALL");
 
   const toggleDropdown = () => setIsOpen(!isOpen);
   const selectFilter = (value) => {
-    setFilter(value);
+    setFilterStatus(value);
     setIsOpen(false);
   }
 
@@ -19,7 +18,7 @@ function Filter() {
         className="flex items-center justify-between bg-accent text-white w-full h-full px-3 py-1 rounded shadow-sm cursor-pointer"
         onClick={toggleDropdown}
       >
-        <span className="text-sm w-full border-r mr-2">{filter}</span>
+        <span className="text-sm w-full border-r mr-2">{filterStatus}</span>
         {isOpen ? <IoIosArrowUp size={18} /> : <IoIosArrowDown size={18} />}
       </div>
 
@@ -30,7 +29,7 @@ function Filter() {
               key={option}
               onClick={() => selectFilter(option)}
               className={`px-3 py-2 cursor-pointer text-accent hover:bg-accent hover:text-white ${
-                filter === option ? 'font-bold bg-accent text-white' : ''
+                filterStatus === option ? 'font-bold bg-accent text-white' : ''
               }`}
             >
               {option}
