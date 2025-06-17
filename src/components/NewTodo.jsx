@@ -28,7 +28,9 @@ function NewTodo({ setTodos }) {
   return (
     <> 
       <div 
-        className="absolute right-12 bottom-6 bg-accent rounded-full p-2 text-white cursor-pointer"
+        className="
+        bg-accent rounded-full p-2 text-white cursor-pointer inline-block
+        "
         onClick={() => setIsOverlayOpen(!isOverlayOpen)}
       >
         <AiOutlinePlus size={24} />
@@ -66,5 +68,7 @@ function NewTodo({ setTodos }) {
     </>
   )
 }
+
+// absolute right-12 bottom-6
 
 export default NewTodo;

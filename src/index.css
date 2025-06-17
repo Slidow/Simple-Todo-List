@@ -12,3 +12,9 @@
 * {
   box-sizing: border-box;
 }
+
+.safe-bottom {
+  position: fixed;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 1.5rem);
+  right: 1rem;
+}
