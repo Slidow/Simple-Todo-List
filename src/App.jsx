@@ -37,15 +37,17 @@ function App() {
       <div className="flex-1 p-12 relative max-w-[1000px] min-h-screen">
         <h1 className="text-primary text-2xl text-center mb-5 dark:text-white">TODO LIST</h1>
 
-        <div className="flex items-center gap-5 mb-9">
+        <div className="flex flex-col sm:flex-row items-center gap-5 mb-9">
           <SearchInput searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-          <Filter filterStatus={filterStatus} setFilterStatus={setFilterStatus} />
-          <ThemeToggle theme={theme} setTheme={setTheme} />
+          <div className="flex items-center gap-5">
+            <Filter filterStatus={filterStatus} setFilterStatus={setFilterStatus} />
+            <ThemeToggle theme={theme} setTheme={setTheme} />
+          </div>
         </div>
 
         <div className="flex flex-col gap-5 md:px-25">
-          {visibleTodos.length !== 0 ? visibleTodos.map((todo) => (
-            <Todo todo={todo} setTodos={setTodos} />
+          {visibleTodos.length !== 0 ? visibleTodos.map((todo, index) => (
+            <Todo todo={todo} setTodos={setTodos} index={index} length={visibleTodos.length} />
           )) : <span className="font-semibold text-center dark:text-white">Empty</span>}
         </div>
         

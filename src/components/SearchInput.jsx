@@ -9,7 +9,7 @@ function SearchInput({ searchQuery, setSearchQuery }) {
   }
 
   return (
-    <div className="flex flex-1 items-center gap-3 border border-accent dark:border-white rounded-sm px-3 py-1">
+    <div className="flex flex-1 w-full items-center gap-3 border border-accent dark:border-white rounded-sm px-3 py-1">
       <input
         ref={inputRef}
         value={searchQuery}

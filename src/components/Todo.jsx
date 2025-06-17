@@ -1,7 +1,7 @@
 import { MdOutlineCheckBoxOutlineBlank, MdCheckBox } from "react-icons/md";
 import { FaTrash } from "react-icons/fa";
 
-function Todo({ todo, setTodos }) {
+function Todo({ todo, setTodos, index, length }) {
 
   const changeStatus = (id) => {
     setTodos(prev => (
@@ -14,7 +14,7 @@ function Todo({ todo, setTodos }) {
   }
 
   return (
-    <div className="flex items-center gap-2">
+    <div className={`flex items-center gap-2 pb-3 ${index !== length - 1 ? 'border-b' : ''} border-accent`}>
       {todo.done 
         ? <MdCheckBox 
             className="text-accent cursor-pointer" 
