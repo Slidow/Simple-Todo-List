@@ -54,7 +54,7 @@ function App() {
 
       <div className="
         fixed bottom-0 py-3 z-75 w-full bg-white flex items-center justify-center max-w-[1000px] px-12
-        mx-auto md:justify-end
+        mx-auto sm:justify-end
         "
       >
         <NewTodo setTodos={setTodos} />
